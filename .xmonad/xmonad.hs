@@ -11,11 +11,7 @@ import XMonad.Hooks.DynamicLog hiding (dzen)
 
 -- layouts
 import XMonad.Layout
-import XMonad.Layout.IM
 import XMonad.Layout.ToggleLayouts
-import XMonad.Layout.Reflect
-import XMonad.Layout.Combo
-import XMonad.Layout.Grid
 import XMonad.Layout.ResizableTile
 import Data.Ratio ((%))
 import XMonad.Layout.Gaps
