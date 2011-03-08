@@ -24,13 +24,7 @@ import XMonad.Layout.Gaps
 myFont = "cure"
 
 -- Colors
---
--- pb: you have _a lot_ of colors here. personally, i'd just define 
--- white, black, grey, etc and use those through the config. also, if 
--- you like that myBgColor is the same gray as myVisibleWsBgColor as 
--- some sort of "theme" you have going on, they shouldn't be separate 
--- functions; the way it is now, you've got to change it in two places 
--- to change the "theme"; know what i mean?
+-- Need to simplify these
 --
 myBgBgColor          = "black"
 myFgColor            = "white"
@@ -74,7 +68,7 @@ wrapBitmap bitmap = "^p(5)^i(" ++ myBitmapsDir ++ bitmap ++ ")^p(5)"
 -- Window rules
 myManageHook = composeAll
 	[ className =? "wicd-client" --> doFloat
-        , className =? "xine"        --> doFloat
+        , className =? "Namoroka Preferences" --> doFloat
 	]
 
 -- icons directory
@@ -85,7 +79,6 @@ main :: IO ()
 main = do
     d <- spawnDzen myLeftBar
 
-    spawn "conky"
     spawnToDzen "conky -c /home/aoi/.conkyrc" myRightBar
     spawn "xcompmgr"  
     xmonad $ defaultConfig
@@ -100,14 +93,15 @@ main = do
         , modMask            = mod4Mask -- Rebind Mod to the Windows key
         } `additionalKeys` myKeys
 
--- Extra Keys and view for dual screens
+-- Extra Keys 
 myKeys :: [((KeyMask, KeySym), X ())]
 myKeys = [ ((controlMask, xK_Print)       , spawn "sleep 0.5; scrot -s")
          , ((0, xK_Print)                 , spawn "scrot")
 	 , ((mod4Mask, xK_a)              , sendMessage MirrorShrink)
 	 , ((mod4Mask, xK_z)              , sendMessage MirrorExpand)
 	 ]
-         ++  -- Change from greedyView to view
+-- Dual screen change from greedyView to view         
+	++  
 	 [((m .|. mod4Mask, k), windows $ f i)
         | (i, k) <- zip (myWorkspaces) [xK_1 .. xK_9]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
@@ -129,15 +123,6 @@ myRightBar = myLeftBar
 	, alignment  = Just RightAlign
 	}
 
-
--- Dzen Config
--- myDzenGenOpts = "-fg '" ++ myFgColor ++ "' -bg '" ++ myBgColor ++ "' -fn '" ++ myFont ++ "' -h '16'"
-
--- Status Bar
--- sBarCmd = "dzen2 -w 512 -ta l " ++ myDzenGenOpts
-
--- Conky Bar
--- topBarCmd = "conky -c /home/aoi/.conkyrc | dzen2 -w 512 -x 512 -ta r " ++ myDzenGenOpts
 
 -- Dzen Config
 myLogHook h = dynamicLogWithPP $ defaultPP
