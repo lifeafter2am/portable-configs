@@ -16,8 +16,3 @@ URxvt.underlineColor: blue
 URxvt.saveLines: 65535
 URxvt.scrollBar: false
 URxvt.font: xft:clean
-
-
-URxvt*urlLauncher: firefox
-URxvt*matcher.button: 1
-URxvt*perl-ext-common: matcher
