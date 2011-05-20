@@ -1,0 +1,6 @@
+Configs for most of the graphical programs I use.  These are based off of my netbook, which houses the most current configurations.  Tweaks to the XMonad include:
+1) Dynamic Resizing of the dzen2/conkycli bar
+2) Images instead of names for desktops
+3) Only 2 layouts (ResizableTall and Full)
+4) Full themed support up front
+
