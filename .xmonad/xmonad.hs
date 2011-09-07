@@ -47,16 +47,18 @@ myUrgencyHintBgColor   = "brown"
 customLayout = avoidStruts $ ResizableTall 2 (3/100) (1/2) [] ||| Full
 
 -- Workspaces
-myWorkspaces = [ wrapBitmap "arch_10x10.xbm"
-	       , wrapBitmap "fox.xbm"
-	       , wrapBitmap "dish.xbm"
-	       , wrapBitmap "cat.xbm"
-	       , wrapBitmap "empty.xbm"
-	       , wrapBitmap "shroom.xbm"
-	       , wrapBitmap "bug_02.xbm"
-	       , wrapBitmap "eye_l.xbm"
-	       , wrapBitmap "eye_r.xbm"
-	       ]
+-- myWorkspaces = [ wrapBitmap "arch_10x10.xbm"
+--	       , wrapBitmap "fox.xbm"
+--	       , wrapBitmap "dish.xbm"
+--	       , wrapBitmap "cat.xbm"
+--	       , wrapBitmap "empty.xbm"
+--	       , wrapBitmap "shroom.xbm"
+--	       , wrapBitmap "bug_02.xbm"
+--	       , wrapBitmap "eye_l.xbm"
+--	       , wrapBitmap "eye_r.xbm"
+--	       ]
+
+myWorkspaces = ["term","www","code"] ++ map show [4..9]
 
 wrapBitmap :: String -> String
 wrapBitmap bitmap = "^p(5)^i(" ++ myBitmapsDir ++ bitmap ++ ")^p(5)"
@@ -81,7 +83,7 @@ main = do
         { manageHook         = myManageHook 
         , terminal           = "urxvtc"
         , workspaces         = myWorkspaces
-        , borderWidth        = 0
+        , borderWidth        = 1
         , normalBorderColor  = myInactiveBorderColor
         , focusedBorderColor = myActiveBorderColor
         , layoutHook         = customLayout
@@ -95,6 +97,7 @@ myKeys = [ ((controlMask, xK_Print)       , spawn "sleep 0.5; scrot -s")
          , ((0, xK_Print)                 , spawn "scrot")
 	 , ((mod4Mask, xK_a)              , sendMessage MirrorShrink)
 	 , ((mod4Mask, xK_z)              , sendMessage MirrorExpand)
+	 , ((mod4Mask, xK_p)		  , spawn "dmenu_run")
 	 ]
 -- Dual screen change from greedyView to view         
 	++  
@@ -108,17 +111,16 @@ myLeftBar = defaultDzen
 	{ width    = Just $ Percent 50
 	, height   = Just 16
 	, font	   = Just myFont
-	, fg_color = Just myFgColor
-	, bg_color = Just myBgColor
+	, fgColor = Just myFgColor
+	, bgColor = Just myBgColor
 	}
 
 myRightBar :: DzenConf
 myRightBar = myLeftBar
-	{ x_position = Just $ Percent 50
+	{ xPosition = Just $ Percent 50
         , width      = Just $ Percent 50
 	, alignment  = Just RightAlign
 	}
-
 
 -- Dzen Config
 myLogHook h = dynamicLogWithPP $ defaultPP
