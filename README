@@ -1,6 +1,6 @@
-Configs for most of the graphical programs I use.  These are based off of my netbook, which houses the most current configurations.  Tweaks to the XMonad include:
+Configs for XMonad, dzen2, conky, vim, and other programs.  There are two sets of XMonad / Conky configurations.  The first onen is completely text based (requires no icons), and the second is purely icon based (with no text).  Features in both inclue:
 1) Dynamic Resizing of the dzen2/conkycli bar
-2) Images instead of names for desktops
-3) Only 2 layouts (ResizableTall and Full)
-4) Full themed support up front
+2) Only 2 layouts (ResizableTall and Full)
+3) Theme support through variables
 
+These are called "portable configs" because with the Dzen.hs library by pbrisbin and this config you don't need to edit sizes of dzen2 bars, hence making it portable across machines without much refactoring (mostly just chaging the folder for icons if you are using them).

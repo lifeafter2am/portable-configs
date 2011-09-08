@@ -1,0 +1,12 @@
+# Set to yes if you want Conky to be forked in the background
+background no
+
+out_to_console yes
+
+# Update interval in seconds
+update_interval 1
+
+color1 ef89bb
+
+TEXT
+^fg(\#1793d3)| CPU ^fg(\#ffffff)${cpu cpu1}% : ${cpu cpu2}% : ${cpu cpu3}% : ${cpu cpu4}% @ $freq_g Ghz ^fg(\#1793d3)| RAM ^fg(\#ffffff)$mem/$memmax ^fg(\#1793d3)| DOWN ^fg(\#ffffff)${downspeed eth1} ^fg(\#1793d3)UP ^fg(\#ffffff)${upspeed eth1} ^fg(\#1793d3)| ^fg(\#ffffff)${time} ^fg(\#1793d3)| 
