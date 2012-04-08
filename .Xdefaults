@@ -1,3 +1,4 @@
+!RXVT settings
 URxvt.foreground: white
 
 URxvt.depth: 32
@@ -10,9 +11,72 @@ URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
 URxvt.perl-ext: selection,mark-yank-urls
 URxvt.perl-ext-common:matcher
-URxvt.urlLauncher: /usr/bin/firefox
+URxvt.urlLauncher: /usr/bin/chromium
 URxvt.matcher.button: 1
 URxvt.underlineColor: blue
 URxvt.saveLines: 65535
 URxvt.scrollBar: false
 URxvt.font: xft:clean
+
+*background: #000000
+*foreground: #999999
+!Black
+*color0: #0f0f0f
+*color8: #292929
+!Red
+*color1: #2f4d80
+*color9: #7791e0
+!Green
+*color2: #424242
+*color10: #828a8c
+!Yellow
+*color3: #6b8ba3
+*color11: #8ebdde
+!Blue
+*color4: #273a87
+*color12: #3955c4
+!Magenta
+*color5: #74637d
+*color13: #927d9e
+!Cyan
+*color6: #556c85
+*color14: #6e98b8
+!White
+*color7: #c0c0c0
+*color15: #ffffff
+
+
+!*background: #020202
+!*foreground: #888888
+!*color0:  #282a2b
+!*color8:  #2c2f30
+!*color1:  #ac357e
+!*color9:  #df45a4
+!*color2:  #65ac35
+!*color10: #83df45
+!*color3:  #a8ac35
+!*color11: #dadf45
+!*color4:  #0066dd
+!*color12: #0066dd
+!*color5:  #666699
+!*color13: #8888cc
+!*color6:  #8caff0
+!*color14: #9bbaf1
+!*color7:  #a8a8a8
+!*color15: #f0f0f0
+
+!URxvt.font: -*-ohsnap-medium-r-normal-*-15-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-ohsnap-medium-r-normal-*-15-*-*-*-*-*-*-*
+
+!Xft settings
+Xft.dpi:          96
+Xft.antialias:    true
+Xft.rgba:         rgb
+Xft.hinting:      true
+Xft.hintstyle:    hintslight
+Xft.lcdfilter:    lcddefault
+
+
+URxvt*urlLauncher: chromium
+URxvt*matcher.button: 1
+URxvt*perl-ext-common: matcher
