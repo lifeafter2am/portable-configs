@@ -1,4 +1,4 @@
-Configs for XMonad, dzen2, conky, vim, and other programs.  There are two sets of XMonad / Conky configurations.  The first one is completely text based (requires no icons), and the second is purely icon based (with no text).  Features in both inclue:
+Configs for XMonad, dzen2, conky, vim, and other programs.  There are two sets of Conky configurations.  The first one is completely text based (requires no icons), and the second is purely icon based (with no text).  Features in both inclue:
 1) Dynamic Resizing of the dzen2/conkycli bar
 2) Only 2 layouts (ResizableTall and Full)
 3) Theme support through variables
